@@ -1,6 +1,6 @@
 function checkSID() {
   let sid = (document.getElementById("sid").value).trim();
-  if (sid.length == 10) {
+  if (sid.length == 10 && !isNaN(sid)) {
     return true;
   } else {
     return false;
@@ -18,7 +18,7 @@ function checkCandiNo() {
 
 function validateForm(){
 	if(!checkSID()){
-	  alert("Invalid value for Student ID!");
+	  alert("Invalid value for Student ID! (It must 0-9 and exactly 10 digits.)");
 	  document.getElementById("sid").focus();
 	  return false;
 	}else{
