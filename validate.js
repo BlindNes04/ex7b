@@ -9,21 +9,23 @@ function checkSID() {
 
 function checkCandiNo() {
   let candi = (document.getElementById("candi").value).trim();
-  if (isNaN(candi) || candi < 1) {
-    return false;
-  } else {
+  let num = Number(candi);
+
+  if (!isNaN(num) && num >= 1 && num <= 10) {
     return true;
+  } else {
+    return false;
   }
 }
 
 function validateForm(){
 	if(!checkSID()){
-	  alert("Invalid value for Student ID! (It must 0-9 and exactly 10 digits.)");
+	  alert("Invalid value for Student ID! (It must 0-9 and exactly 10 digits)");
 	  document.getElementById("sid").focus();
 	  return false;
 	}else{
 		if(!checkCandiNo()){
-		  alert("Invalid value for Candidate No!!");
+		  alert("Invalid value for Candidate No.! (It must be a number between 1 and 10)");
 		  document.getElementById("candi").focus();
 		  return false;
 		}else{
